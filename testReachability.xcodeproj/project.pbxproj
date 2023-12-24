@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00C86BA4ECD3856646D4E3EE /* Pods_testReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D0BC9FDA97F742A0778623 /* Pods_testReachability.framework */; };
 		D3505AE12B3819500011F794 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3505AE02B3819500011F794 /* AppDelegate.swift */; };
 		D3505AE32B3819500011F794 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3505AE22B3819500011F794 /* SceneDelegate.swift */; };
 		D3505AE52B3819500011F794 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3505AE42B3819500011F794 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AACE86A80283DFEAC100482 /* Pods-testReachability.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testReachability.release.xcconfig"; path = "Target Support Files/Pods-testReachability/Pods-testReachability.release.xcconfig"; sourceTree = "<group>"; };
 		D3505ADD2B3819500011F794 /* testReachability.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testReachability.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3505AE02B3819500011F794 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3505AE22B3819500011F794 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		D3505AE92B3819520011F794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3505AEC2B3819520011F794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3505AEE2B3819520011F794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7D0BC9FDA97F742A0778623 /* Pods_testReachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testReachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB302AF6C53717B3CAB38839 /* Pods-testReachability.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testReachability.debug.xcconfig"; path = "Target Support Files/Pods-testReachability/Pods-testReachability.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C86BA4ECD3856646D4E3EE /* Pods_testReachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84233E9C08D78F558C6DE350 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7D0BC9FDA97F742A0778623 /* Pods_testReachability.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95481C37A9076BAA462D4682 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB302AF6C53717B3CAB38839 /* Pods-testReachability.debug.xcconfig */,
+				1AACE86A80283DFEAC100482 /* Pods-testReachability.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D3505AD42B3819500011F794 = {
 			isa = PBXGroup;
 			children = (
 				D3505ADF2B3819500011F794 /* testReachability */,
 				D3505ADE2B3819500011F794 /* Products */,
+				95481C37A9076BAA462D4682 /* Pods */,
+				84233E9C08D78F558C6DE350 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3505AF12B3819520011F794 /* Build configuration list for PBXNativeTarget "testReachability" */;
 			buildPhases = (
+				23B1D137D004AA2709791953 /* [CP] Check Pods Manifest.lock */,
 				D3505AD92B3819500011F794 /* Sources */,
 				D3505ADA2B3819500011F794 /* Frameworks */,
 				D3505ADB2B3819500011F794 /* Resources */,
+				83ECCBD96A64D7ADA9851870 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +191,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23B1D137D004AA2709791953 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-testReachability-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83ECCBD96A64D7ADA9851870 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-testReachability/Pods-testReachability-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-testReachability/Pods-testReachability-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testReachability/Pods-testReachability-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D3505AD92B3819500011F794 /* Sources */ = {
@@ -314,6 +383,7 @@
 		};
 		D3505AF22B3819520011F794 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB302AF6C53717B3CAB38839 /* Pods-testReachability.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -342,6 +412,7 @@
 		};
 		D3505AF32B3819520011F794 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AACE86A80283DFEAC100482 /* Pods-testReachability.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
