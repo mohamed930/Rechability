@@ -14,6 +14,8 @@
 		D3505AE82B3819500011F794 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3505AE62B3819500011F794 /* Main.storyboard */; };
 		D3505AEA2B3819520011F794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3505AE92B3819520011F794 /* Assets.xcassets */; };
 		D3505AED2B3819520011F794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3505AEB2B3819520011F794 /* LaunchScreen.storyboard */; };
+		D3505AFA2B381C9E0011F794 /* Rechability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3505AF92B381C9E0011F794 /* Rechability.swift */; };
+		D3505AFC2B381F720011F794 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3505AFB2B381F720011F794 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		D3505AE92B3819520011F794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3505AEC2B3819520011F794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3505AEE2B3819520011F794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3505AF92B381C9E0011F794 /* Rechability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rechability.swift; sourceTree = "<group>"; };
+		D3505AFB2B381F720011F794 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D7D0BC9FDA97F742A0778623 /* Pods_testReachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testReachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB302AF6C53717B3CAB38839 /* Pods-testReachability.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testReachability.debug.xcconfig"; path = "Target Support Files/Pods-testReachability/Pods-testReachability.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,7 +60,6 @@
 				DB302AF6C53717B3CAB38839 /* Pods-testReachability.debug.xcconfig */,
 				1AACE86A80283DFEAC100482 /* Pods-testReachability.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,6 +87,7 @@
 				D3505AF42B38197B0011F794 /* AppDelegate */,
 				D3505AF62B3819990011F794 /* launchScreen */,
 				D3505AF52B3819920011F794 /* Flow */,
+				D3505AF82B381C850011F794 /* Customs + Extensions */,
 				D3505AF72B3819A60011F794 /* Assets */,
 			);
 			path = testReachability;
@@ -101,6 +105,7 @@
 		D3505AF52B3819920011F794 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				D3505AFB2B381F720011F794 /* ViewModel.swift */,
 				D3505AE42B3819500011F794 /* ViewController.swift */,
 				D3505AE62B3819500011F794 /* Main.storyboard */,
 			);
@@ -122,6 +127,14 @@
 				D3505AEE2B3819520011F794 /* Info.plist */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		D3505AF82B381C850011F794 /* Customs + Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D3505AF92B381C9E0011F794 /* Rechability.swift */,
+			);
+			path = "Customs + Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +252,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3505AFC2B381F720011F794 /* ViewModel.swift in Sources */,
+				D3505AFA2B381C9E0011F794 /* Rechability.swift in Sources */,
 				D3505AE52B3819500011F794 /* ViewController.swift in Sources */,
 				D3505AE12B3819500011F794 /* AppDelegate.swift in Sources */,
 				D3505AE32B3819500011F794 /* SceneDelegate.swift in Sources */,
