@@ -31,10 +31,10 @@ class ViewController: UIViewController {
     }
     
     func subscribeToDisconnectPublisher() {
-        viewmodel.disconnectedPublisher.sink(receiveValue: { [weak self] _ in
+        viewmodel.disconnectedPublisher.sink(receiveValue: { [weak self] msg in
             guard let self = self else { return }
             
-            self.messageLabel.text = "Disconnected Internet!!"
+            self.messageLabel.text = msg
             self.messageLabel.textColor = .red
         }).store(in: &cancellable)
     }

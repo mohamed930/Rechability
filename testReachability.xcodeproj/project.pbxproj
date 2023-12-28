@@ -16,6 +16,8 @@
 		D3505AED2B3819520011F794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3505AEB2B3819520011F794 /* LaunchScreen.storyboard */; };
 		D3505AFA2B381C9E0011F794 /* Rechability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3505AF92B381C9E0011F794 /* Rechability.swift */; };
 		D3505AFC2B381F720011F794 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3505AFB2B381F720011F794 /* ViewModel.swift */; };
+		D3EE1C472B3D96B100B8BED9 /* NoInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EE1C452B3D96B100B8BED9 /* NoInternetConnection.swift */; };
+		D3EE1C482B3D96B100B8BED9 /* NoInternetConnection.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3EE1C462B3D96B100B8BED9 /* NoInternetConnection.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		D3505AEE2B3819520011F794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3505AF92B381C9E0011F794 /* Rechability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rechability.swift; sourceTree = "<group>"; };
 		D3505AFB2B381F720011F794 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		D3EE1C452B3D96B100B8BED9 /* NoInternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetConnection.swift; sourceTree = "<group>"; };
+		D3EE1C462B3D96B100B8BED9 /* NoInternetConnection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoInternetConnection.xib; sourceTree = "<group>"; };
 		D7D0BC9FDA97F742A0778623 /* Pods_testReachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testReachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB302AF6C53717B3CAB38839 /* Pods-testReachability.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testReachability.debug.xcconfig"; path = "Target Support Files/Pods-testReachability/Pods-testReachability.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +92,7 @@
 				D3505AF62B3819990011F794 /* launchScreen */,
 				D3505AF52B3819920011F794 /* Flow */,
 				D3505AF82B381C850011F794 /* Customs + Extensions */,
+				D3EE1C442B3D969400B8BED9 /* custom */,
 				D3505AF72B3819A60011F794 /* Assets */,
 			);
 			path = testReachability;
@@ -135,6 +140,15 @@
 				D3505AF92B381C9E0011F794 /* Rechability.swift */,
 			);
 			path = "Customs + Extensions";
+			sourceTree = "<group>";
+		};
+		D3EE1C442B3D969400B8BED9 /* custom */ = {
+			isa = PBXGroup;
+			children = (
+				D3EE1C452B3D96B100B8BED9 /* NoInternetConnection.swift */,
+				D3EE1C462B3D96B100B8BED9 /* NoInternetConnection.xib */,
+			);
+			path = custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +214,7 @@
 				D3505AED2B3819520011F794 /* LaunchScreen.storyboard in Resources */,
 				D3505AEA2B3819520011F794 /* Assets.xcassets in Resources */,
 				D3505AE82B3819500011F794 /* Main.storyboard in Resources */,
+				D3EE1C482B3D96B100B8BED9 /* NoInternetConnection.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +270,7 @@
 				D3505AFC2B381F720011F794 /* ViewModel.swift in Sources */,
 				D3505AFA2B381C9E0011F794 /* Rechability.swift in Sources */,
 				D3505AE52B3819500011F794 /* ViewController.swift in Sources */,
+				D3EE1C472B3D96B100B8BED9 /* NoInternetConnection.swift in Sources */,
 				D3505AE12B3819500011F794 /* AppDelegate.swift in Sources */,
 				D3505AE32B3819500011F794 /* SceneDelegate.swift in Sources */,
 			);
@@ -412,6 +428,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,6 +458,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

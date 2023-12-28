@@ -26,8 +26,11 @@ class ViewModel {
                 self.dataPublisher.send("Hello Mr/ Mohamed Ali!")
             case .disconnected:
                 self.disconnectedPublisher.send("Disconncted")
+            case .WifiNotValid:
+                self.disconnectedPublisher.send("Wifi/Celluar not real")
             case .error:
                 print("Error in notifing")
+                self.disconnectedPublisher.send("Error in notifing")
             }
         }).store(in: &cancellables)
     }

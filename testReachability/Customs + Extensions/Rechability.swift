@@ -7,16 +7,19 @@
 
 import Foundation
 import Reachability
-import SystemConfiguration
+import PlainPing
 import Combine
 
 class CheckConnection {
     //declare this property where it won't go out of scope relative to your listener
     private let reachability = try! Reachability()
     
+    var successCounter = 0
+    
     enum connectionStatus {
         case unspecified
         case connected
+        case WifiNotValid
         case disconnected
         case error
     }
@@ -30,15 +33,23 @@ class CheckConnection {
         reachability.whenReachable = { [weak self] reachability in
             guard let self = self else { return }
             
-            if self.isConnectedToNetwork() {
-                print("connected")
+            self.successCounter = 0 // resete the counter..
+            
+            self.performTaskMultipleTimes { [weak self] response in
+                guard let self = self else { return }
+                
+                if response == .connected {
+                    self.connectionStatusPublisher.send(response)
+                }
+                else {
+                    self.connectionStatusPublisher.send(.WifiNotValid)
+                }
             }
-            else {
-                print("not connected")
-            }
+            
         }
         reachability.whenUnreachable = { [weak self] _ in
             guard let self = self else { return }
+            self.successCounter = 0 // resete the counter..
             self.connectionStatusPublisher.send(.disconnected)
         }
 
@@ -49,34 +60,52 @@ class CheckConnection {
         }
     }
     
-    func isConnectedToNetwork() -> Bool {
-    var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
-            zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
-        zeroAddress.sin_family = sa_family_t(AF_INET)
+    private func performTaskMultipleTimes(completion: @escaping (connectionStatus) -> Void) {
+        var counter = 0
 
-        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
-            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
-                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) { [weak self] timer in
+            guard let self = self else { return }
+            
+            // Perform your task here
+            self.pingNext { [weak self] result in
+                guard let self = self else { return }
+                
+                self.successCounter = result ? (self.successCounter + 1) : self.successCounter
+                
+                print("Result: ->> \(self.successCounter)")
+                
+                if self.successCounter >= 2 {
+                    timer.invalidate()
+                    completion(.connected)
+                }
+                else {
+                    if counter == 3 && successCounter < 2 {
+                        completion(.disconnected)
+                    }
+                }
+            }
+
+            counter += 1
+            if counter == 3 {
+                timer.invalidate() // Stop the timer after 3 iterations
             }
         }
 
-        var flags: SCNetworkReachabilityFlags = SCNetworkReachabilityFlags(rawValue: 0)
-        if SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) == false {
-            return false
-        }
+        // Ensure the timer fires even when the app is in background mode
+        RunLoop.current.add(timer, forMode: .common)
+    }
+    
+    private func pingNext(completion: @escaping (Bool) -> Void) {
+        PlainPing.ping("www.google.com", withTimeout: 1.0, completionBlock: { (timeElapsed:Double?, error:Error?) in
+            if let latency = timeElapsed {
+                print("latency (ms): \(latency)")
+                completion(true)
+            }
 
-        /* Only Working for WIFI
-        let isReachable = flags == .reachable
-        let needsConnection = flags == .connectionRequired
-
-        return isReachable && !needsConnection
-        */
-
-        // Working for Cellular and WIFI
-        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
-        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
-        let ret = (isReachable && !needsConnection)
-
-        return ret
+            if let error = error {
+                print("error: \(error.localizedDescription)")
+                completion(false)
+            }
+        })
     }
 }
