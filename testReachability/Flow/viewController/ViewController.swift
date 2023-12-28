@@ -18,9 +18,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        subscribeToData()
-        subscribeToDisconnectPublisher()
-        fetchData()
+//        subscribeToData()
+//        subscribeToDisconnectPublisher()
+//        fetchData()
     }
 
     func subscribeToData() {

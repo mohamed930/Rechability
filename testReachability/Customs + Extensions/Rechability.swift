@@ -29,7 +29,9 @@ class CheckConnection {
         return connectionStatusPublisher.eraseToAnyPublisher()
     }
     
-    init() {
+    
+    
+    func startNotify() {
         reachability.whenReachable = { [weak self] reachability in
             guard let self = self else { return }
             
@@ -72,8 +74,6 @@ class CheckConnection {
                 
                 self.successCounter = result ? (self.successCounter + 1) : self.successCounter
                 
-                print("Result: ->> \(self.successCounter)")
-                
                 if self.successCounter >= 2 {
                     timer.invalidate()
                     completion(.connected)
@@ -96,7 +96,7 @@ class CheckConnection {
     }
     
     private func pingNext(completion: @escaping (Bool) -> Void) {
-        PlainPing.ping("www.google.com", withTimeout: 1.0, completionBlock: { (timeElapsed:Double?, error:Error?) in
+        PlainPing.ping("www.google.com", withTimeout: 1.5, completionBlock: { (timeElapsed:Double?, error:Error?) in
             if let latency = timeElapsed {
                 print("latency (ms): \(latency)")
                 completion(true)

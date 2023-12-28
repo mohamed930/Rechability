@@ -6,17 +6,48 @@
 //
 
 import UIKit
+import Combine
 
+var reachability = CheckConnection()
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+//    var reachability = CheckConnection()
+    private var cancellable = Set<AnyCancellable>()
+    let navigation = UINavigationController(rootViewController: ViewController())
 
     var window: UIWindow?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let scene = scene as? UIWindowScene else { return }
+               
+        window = UIWindow(windowScene: scene)
+        noInternetConnection(navigationController: navigation)
+        reachability.startNotify()
+        window?.rootViewController = navigation
+        window?.makeKeyAndVisible()
+    }
+    
+    func noInternetConnection(navigationController: UINavigationController) {
+        
+        reachability.connectionStatusObservable.sink(receiveValue: { status in            
+            let vc = NoInternetConnection()
+            vc.modalPresentationStyle = .fullScreen
+            
+            print(status)
+            
+            switch status {
+                case .unspecified: break
+                case .connected:
+                    navigationController.topViewController?.dismiss(animated: true)
+                case .WifiNotValid:
+                    navigationController.topViewController?.present(vc, animated: true)
+                case .disconnected:
+                    navigationController.topViewController?.present(vc, animated: true)
+                case .error: break
+            }
+            
+        }).store(in: &cancellable)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

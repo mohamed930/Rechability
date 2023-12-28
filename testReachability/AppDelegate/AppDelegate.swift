@@ -6,15 +6,46 @@
 //
 
 import UIKit
+import Combine
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    let navigation = UINavigationController(rootViewController: ViewController())
+    private var cancellable = Set<AnyCancellable>()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        noInternetConnection(navigationController: navigation)
         return true
+    }
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        noInternetConnection(navigationController: navigation)
+        return true
+    }
+    
+    func noInternetConnection(navigationController: UINavigationController) {
+        
+        reachability.connectionStatusObservable.sink(receiveValue: { status in
+            let vc = NoInternetConnection()
+            vc.modalPresentationStyle = .fullScreen
+            
+            print(status)
+            
+            switch status {
+                case .unspecified: break
+                case .connected:
+                    navigationController.topViewController?.dismiss(animated: true)
+                case .WifiNotValid:
+                    navigationController.topViewController?.present(vc, animated: true)
+                case .disconnected:
+                    navigationController.topViewController?.present(vc, animated: true)
+                case .error: break
+            }
+            
+        }).store(in: &cancellable)
     }
 
     // MARK: UISceneSession Lifecycle
