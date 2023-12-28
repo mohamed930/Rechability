@@ -6,14 +6,10 @@
 //
 
 import UIKit
-import Combine
 
-var reachability = CheckConnection()
+let navigation = UINavigationController(rootViewController: ViewController())
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
-//    var reachability = CheckConnection()
-    private var cancellable = Set<AnyCancellable>()
-    let navigation = UINavigationController(rootViewController: ViewController())
 
     var window: UIWindow?
 
@@ -22,32 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = scene as? UIWindowScene else { return }
                
         window = UIWindow(windowScene: scene)
-        noInternetConnection(navigationController: navigation)
-        reachability.startNotify()
+        ShardCheckConnection.shared.noInternetConnection(navigationController: navigation)
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
-    }
-    
-    func noInternetConnection(navigationController: UINavigationController) {
-        
-        reachability.connectionStatusObservable.sink(receiveValue: { status in            
-            let vc = NoInternetConnection()
-            vc.modalPresentationStyle = .fullScreen
-            
-            print(status)
-            
-            switch status {
-                case .unspecified: break
-                case .connected:
-                    navigationController.topViewController?.dismiss(animated: true)
-                case .WifiNotValid:
-                    navigationController.topViewController?.present(vc, animated: true)
-                case .disconnected:
-                    navigationController.topViewController?.present(vc, animated: true)
-                case .error: break
-            }
-            
-        }).store(in: &cancellable)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

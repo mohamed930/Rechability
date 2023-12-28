@@ -79,7 +79,7 @@ class CheckConnection {
                     completion(.connected)
                 }
                 else {
-                    if counter == 3 && successCounter < 2 {
+                    if counter == 3 && self.successCounter < 2 {
                         completion(.disconnected)
                     }
                 }

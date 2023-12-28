@@ -14,6 +14,7 @@
 		D3505AED2B3819520011F794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3505AEB2B3819520011F794 /* LaunchScreen.storyboard */; };
 		D3505AFA2B381C9E0011F794 /* Rechability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3505AF92B381C9E0011F794 /* Rechability.swift */; };
 		D3505AFC2B381F720011F794 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3505AFB2B381F720011F794 /* ViewModel.swift */; };
+		D379B5402B3DFC560043CF3D /* ShardcheckConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D379B53F2B3DFC560043CF3D /* ShardcheckConnection.swift */; };
 		D3DE03FF2B3DE6B00053C41E /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE03FE2B3DE6B00053C41E /* UIButton.swift */; };
 		D3DE04012B3DE6E60053C41E /* color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE04002B3DE6E60053C41E /* color.swift */; };
 		D3DE04062B3DE8790053C41E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE04042B3DE8790053C41E /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		D3505AEE2B3819520011F794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3505AF92B381C9E0011F794 /* Rechability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rechability.swift; sourceTree = "<group>"; };
 		D3505AFB2B381F720011F794 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		D379B53F2B3DFC560043CF3D /* ShardcheckConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShardcheckConnection.swift; sourceTree = "<group>"; };
 		D3DE03FE2B3DE6B00053C41E /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		D3DE04002B3DE6E60053C41E /* color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
 		D3DE04042B3DE8790053C41E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				D3505AF92B381C9E0011F794 /* Rechability.swift */,
+				D379B53F2B3DFC560043CF3D /* ShardcheckConnection.swift */,
 				D3DE04002B3DE6E60053C41E /* color.swift */,
 				D3DE03FE2B3DE6B00053C41E /* UIButton.swift */,
 			);
@@ -286,6 +289,7 @@
 				D3DE04062B3DE8790053C41E /* ViewController.swift in Sources */,
 				D3EE1C472B3D96B100B8BED9 /* NoInternetConnection.swift in Sources */,
 				D3DE03FF2B3DE6B00053C41E /* UIButton.swift in Sources */,
+				D379B5402B3DFC560043CF3D /* ShardcheckConnection.swift in Sources */,
 				D3DE04012B3DE6E60053C41E /* color.swift in Sources */,
 				D3505AE12B3819500011F794 /* AppDelegate.swift in Sources */,
 				D3505AE32B3819500011F794 /* SceneDelegate.swift in Sources */,
