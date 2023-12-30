@@ -7,7 +7,7 @@
 
 import UIKit
 
-let navigation = UINavigationController(rootViewController: ViewController())
+let navigation = UINavigationController(rootViewController: MoviesViewController())
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

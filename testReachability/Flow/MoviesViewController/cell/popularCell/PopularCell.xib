@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopularCell" id="gTV-IL-0wX" customClass="PopularCell" customModule="testReachability" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="296" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="296" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="one-piece-merged-volumes-covers 2" translatesAutoresizingMaskIntoConstraints="NO" id="2XI-hP-Sqw">
+                        <rect key="frame" x="0.0" y="0.0" width="296" height="200"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ged-xT-Iwg">
+                        <rect key="frame" x="0.0" y="0.0" width="296" height="200"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="2XI-hP-Sqw" secondAttribute="trailing" id="6fn-vr-dxZ"/>
+                <constraint firstAttribute="trailing" secondItem="Ged-xT-Iwg" secondAttribute="trailing" id="73F-dy-Oq4"/>
+                <constraint firstAttribute="bottom" secondItem="2XI-hP-Sqw" secondAttribute="bottom" id="9Uc-pV-23D"/>
+                <constraint firstItem="2XI-hP-Sqw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HNX-hn-ijc"/>
+                <constraint firstItem="Ged-xT-Iwg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TNn-4c-BoW"/>
+                <constraint firstItem="2XI-hP-Sqw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XQu-mZ-GvP"/>
+                <constraint firstAttribute="bottom" secondItem="Ged-xT-Iwg" secondAttribute="bottom" id="ZoO-22-CZK"/>
+                <constraint firstItem="Ged-xT-Iwg" firstAttribute="width" secondItem="2XI-hP-Sqw" secondAttribute="width" id="aYi-Yl-diT"/>
+                <constraint firstItem="Ged-xT-Iwg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rTx-wp-qcd"/>
+                <constraint firstItem="Ged-xT-Iwg" firstAttribute="height" secondItem="2XI-hP-Sqw" secondAttribute="height" id="rVj-ot-IEh"/>
+            </constraints>
+            <size key="customSize" width="382" height="218"/>
+            <connections>
+                <outlet property="blurImage" destination="Ged-xT-Iwg" id="de9-YC-GBI"/>
+                <outlet property="mainImageView" destination="2XI-hP-Sqw" id="nFK-pc-6kd"/>
+            </connections>
+            <point key="canvasLocation" x="383.20610687022901" y="47.887323943661976"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="one-piece-merged-volumes-covers 2" width="296" height="200"/>
+    </resources>
+</document>

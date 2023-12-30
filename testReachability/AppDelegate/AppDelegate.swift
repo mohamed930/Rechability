@@ -6,15 +6,11 @@
 //
 
 import UIKit
-import Combine
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-    let navigation = UINavigationController(rootViewController: ViewController())
-    private var cancellable = Set<AnyCancellable>()
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
