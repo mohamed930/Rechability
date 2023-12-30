@@ -26,6 +26,10 @@ class MoviesViewController: UIViewController {
         fetchData()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
+    
     func regesterCollection() {
         mostpopularCollectionView.registerNib(cell: PopularCell.self)
     }
